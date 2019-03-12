@@ -19,3 +19,23 @@ public class ContactSearch {
         } 
         
     }
+
+
+
+SOSL TrailHead
+
+SOlution:
+
+
+public class ContactAndLeadSearch {
+
+     public static List<List< sObject>> searchContactsAndLeads(string name) 
+     {
+        
+         List<List<sObject>> searchresult = [FIND 'Smith' IN ALL FIELDS 
+                   RETURNING Contact(FirstName),Lead(FirstName)];
+         return searchresult;
+         
+     }
+    
+}
