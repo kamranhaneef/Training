@@ -1,0 +1,21 @@
+
+SOQL QUERIES TRAIL HEAD:   https://trailhead.salesforce.com/content/learn/modules/apex_database/apex_database_soql
+
+
+SOLUTION:   
+
+
+public class ContactSearch {
+    public static List<Contact> searchForContacts(string name, string mail ) 
+    {
+        try {
+           List <Contact> saveContacts = [SELECT ID, FirstName FROM Contact WHERE  LastName LIKE :name AND MailingPostalCode LIKE :mail];
+            
+           return saveContacts;
+        }
+       catch (DmlException e) 
+        {
+            return null;
+        } 
+        
+    }
